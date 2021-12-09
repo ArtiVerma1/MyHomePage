@@ -22,8 +22,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.IOException
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -62,9 +64,12 @@ class HomePage : NewBaseActivity() {
         val group = findViewById<ViewGroup>(R.id.container)
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.m_homepage_modified, group, true)
         homepage = binding!!.homecontainer
-        getList1()
+      //  getList1()
+
         homeViewModel =
             ViewModelProvider(this).get(HomePageViewModel::class.java)
+        getJsonDataFromAsset(applicationContext,"response.json")
+
 //        (application as MyApplication).mageNativeAppComponent!!.doHomePageInjection(this)
 //        MyApplication.dataBaseReference = MyApplication.getmFirebaseSecondanyInstance()
 //            .getReference(Urls(MyApplication.context).shopdomain.replace(".myshopify.com", ""))
@@ -186,6 +191,7 @@ class HomePage : NewBaseActivity() {
 
         try {
             val array = JSONObject(AssetJSONFile("response.json", this@HomePage)).names()
+           // var names: JSONArray = array.getJSONObject("sort_order").names()!!
             try {
                 var i = 0
                 val l = array.length()
@@ -200,6 +206,17 @@ class HomePage : NewBaseActivity() {
             e.printStackTrace()
         }
         return list
+    }
+    fun getJsonDataFromAsset(context: Context, fileName: String): String? {
+        val jsonString: String
+        try {
+            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
+            homeViewModel.parseResponse(jsonString,this@HomePage )
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+            return null
+        }
+        return jsonString
     }
 
 //    private fun showData(response: ApiResponse?) {
