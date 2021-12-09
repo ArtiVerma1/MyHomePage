@@ -15,7 +15,7 @@
         android:title="Cart" />
     <item
         android:id="@+id/wishlist_bottom"
-
+        android:actionLayout="@layout/m_wishcount"
         android:icon="@drawable/wishlist_icon_bottom"
         android:title="Wishlist" />
     <item

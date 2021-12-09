@@ -9,13 +9,22 @@
         <entry key="app/src/main/res/layout/m_bannerlayout.xml" value="0.17798913043478262" />
         <entry key="app/src/main/res/layout/m_basefragment.xml" value="0.1408514492753623" />
         <entry key="app/src/main/res/layout/m_category_circle.xml" value="0.18614130434782608" />
+        <entry key="app/src/main/res/layout/m_category_square.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/m_collectionlgrid.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/m_collectionslider.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/m_count.xml" value="0.11197916666666667" />
+        <entry key="app/src/main/res/layout/m_fixedcustomisable.xml" value="0.16394927536231885" />
         <entry key="app/src/main/res/layout/m_homepage_modified.xml" value="0.1" />
         <entry key="app/src/main/res/layout/m_leftmenufragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/m_newbaseactivity.xml" value="0.1408514492753623" />
+        <entry key="app/src/main/res/layout/m_product_hv_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/m_product_slider.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/m_standlonebanner.xml" value="0.16394927536231885" />
         <entry key="app/src/main/res/layout/m_topbar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/m_wishcount.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.190625" />
         <entry key="app/src/main/res/menu/m_search.xml" value="0.190625" />
+        <entry key="app/src/main/res/menu/m_wish.xml" value="0.11197916666666667" />
       </map>
     </option>
   </component>

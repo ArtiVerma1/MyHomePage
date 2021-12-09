@@ -1,12 +1,11 @@
 package com.example.myhomepage.model
 
+
 import android.content.Context
-import android.content.Intent
 import android.util.Base64
 import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-
 import java.io.UnsupportedEncodingException
 import java.nio.charset.Charset
 
@@ -27,7 +26,7 @@ class CategoryCircle : BaseObservable() {
     var cat_value_one:String?=null
         set(cat_value_one){
             field=cat_value_one
-           // notifyPropertyChanged(BR.cat_value_one)
+            //notifyPropertyChanged(BR.cat_value_one)
         }
     @get:Bindable
     var cat_link_one:String?=null
@@ -39,7 +38,7 @@ class CategoryCircle : BaseObservable() {
     var cat_image_two: String? = null
         set(cat_image_two) {
             field = cat_image_two
-          //  notifyPropertyChanged(BR.cat_image_two)
+          // notifyPropertyChanged(BR.cat_image_two)
         }
     @get:Bindable
     var cat_text_two:String?=null
@@ -51,13 +50,13 @@ class CategoryCircle : BaseObservable() {
     var cat_value_two:String?=null
         set(cat_value_two){
             field=cat_value_two
-          //  notifyPropertyChanged(BR.cat_value_two)
+           // notifyPropertyChanged(BR.cat_value_two)
         }
     @get:Bindable
     var cat_link_two:String?=null
         set(cat_link_two){
             field=cat_link_two
-           // notifyPropertyChanged(BR.cat_link_two)
+          //  notifyPropertyChanged(BR.cat_link_two)
         }
     @get:Bindable
     var cat_image_three: String? = null
@@ -69,7 +68,7 @@ class CategoryCircle : BaseObservable() {
     var cat_text_three:String?=null
         set(cat_text_three){
             field=cat_text_three
-          //  notifyPropertyChanged(BR.cat_text_three)
+            //notifyPropertyChanged(BR.cat_text_three)
         }
     @get:Bindable
     var cat_value_three:String?=null
@@ -99,7 +98,7 @@ class CategoryCircle : BaseObservable() {
     var cat_value_four:String?=null
         set(cat_value_four){
             field=cat_value_four
-          //  notifyPropertyChanged(BR.cat_value_four)
+           // notifyPropertyChanged(BR.cat_value_four)
         }
     @get:Bindable
     var cat_link_four:String?=null
@@ -117,27 +116,27 @@ class CategoryCircle : BaseObservable() {
     var cat_text_five:String?=null
         set(cat_text_five){
             field=cat_text_five
-            //notifyPropertyChanged(BR.cat_text_five)
+    //  notifyPropertyChanged(BR.cat_text_five)
         }
     @get:Bindable
     var cat_value_five:String?=null
         set(cat_value_five){
             field=cat_value_five
-         //   notifyPropertyChanged(BR.cat_value_five)
+      //  notifyPropertyChanged(BR.cat_value_five)
         }
     @get:Bindable
     var cat_link_five:String?=null
         set(cat_link_five){
             field=cat_link_five
-           // notifyPropertyChanged(BR.cat_link_five)
+    //  notifyPropertyChanged(BR.cat_link_five)
         }
     @get:Bindable
     var radius:String?=null
         set(radius){
             field=radius
-           // notifyPropertyChanged(BR.radius)
+       //   notifyPropertyChanged(BR.radius)
         }
-    fun catClick(view: View, category: CategoryCircle){
+   public fun catClick(view: View, category: CategoryCircle){
         when(view.tag.toString()){
             "cat_one"->{
                 navigateToPage(view.context,category.cat_link_one,category.cat_value_one)

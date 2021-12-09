@@ -1,6 +1,7 @@
 package com.example.myhomepage.Activities
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
@@ -29,6 +30,7 @@ import com.example.myhomepage.fragments.BaseFragment
 import com.example.myhomepage.viewModel.HomePageViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
+import info.androidhive.fontawesome.FontTextView
 import java.util.*
 import kotlin.collections.HashMap
 //@AndroidEntryPoint
@@ -474,9 +476,9 @@ open class NewBaseActivity : AppCompatActivity(), BaseFragment.OnFragmentInterac
         item = menu.findItem(R.id.search_item)
         wishitem = menu.findItem(R.id.wish_item)
         cartitem = menu.findItem(R.id.cart_item)
-//        item?.setActionView(R.layout.m_search)
-//        wishitem.setActionView(R.layout.m_wishcount)
-//        cartitem.setActionView(R.layout.m_count)
+     //   item?.setActionView(R.layout.m_search)
+        wishitem.setActionView(R.layout.m_wishcount)
+       cartitem.setActionView(R.layout.m_count)
         val search = item?.actionView
         if (this@NewBaseActivity !is HomePage) {
             search.visibility = View.GONE
@@ -573,7 +575,7 @@ open class NewBaseActivity : AppCompatActivity(), BaseFragment.OnFragmentInterac
 //        val wishview = wishitem.actionView
 //        val cartview = cartitem.actionView
 //        val searchview = item?.actionView
-//        val wishrelative = wishview.findViewById<RelativeLayout>(R.id.back)
+//       val wishrelative = wishview.findViewById<RelativeLayout>(R.id.back)
 //        val wishtext = wishview.findViewById<TextView>(R.id.count)
 //        val wishicon = wishview.findViewById<FontTextView>(R.id.cart_icon)
 //        val cartrelative = cartview.findViewById<RelativeLayout>(R.id.back)
@@ -585,9 +587,9 @@ open class NewBaseActivity : AppCompatActivity(), BaseFragment.OnFragmentInterac
 //        carttext.setTextColor(Color.parseColor(counttext))
 //        wishicon.setTextColor(Color.parseColor(iconcolor))
 //        carticon.setTextColor(Color.parseColor(iconcolor))
-//        val searchicon = searchview?.findViewById<FontTextView>(R.id.search_icon)
-//        searchicon?.setTextColor(Color.parseColor(iconcolor))
-//        mDrawerToggle!!.getDrawerArrowDrawable().setColor(Color.parseColor(iconcolor));
+////        val searchicon = searchview?.findViewById<FontTextView>(R.id.search_icon)
+////        searchicon?.setTextColor(Color.parseColor(iconcolor))
+//        //mDrawerToggle!!.getDrawerArrowDrawable().setColor(Color.parseColor(iconcolor));
 //    }
 
     fun setSearchOptions(searchback: String, searchtext: String, searhcborder: String) {

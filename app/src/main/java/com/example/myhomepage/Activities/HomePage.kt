@@ -15,8 +15,12 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.example.myhomepage.R
 import com.example.myhomepage.databinding.MHomepageModifiedBinding
+import com.example.myhomepage.databinding.MTopbarBinding
 import com.example.myhomepage.viewModel.HomePageViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -442,20 +446,20 @@ class HomePage : NewBaseActivity() {
         return true
     }
 
-//    fun setHomeLogoImage(url: String, binding: MTopbarBinding) {
-//        if (!this.isDestroyed) {
-//            Log.i("MageNative", "Image URL" + url)
-//            Glide.with(this)
-//                .load(url)
-//                .thumbnail(0.5f)
-//                .apply(
-//                    RequestOptions().placeholder(R.drawable.image_placeholder)
-//                        .error(R.drawable.image_placeholder).dontTransform()
-//                        .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                )
-//                .into(binding.toolimage)
-//        }
-//    }
+    fun setHomeLogoImage(url: String, binding: MTopbarBinding) {
+        if (!this.isDestroyed) {
+            Log.i("MageNative", "Image URL" + url)
+            Glide.with(this)
+                .load(url)
+                .thumbnail(0.5f)
+                .apply(
+                    RequestOptions().placeholder(R.drawable.image_placeholder)
+                        .error(R.drawable.image_placeholder).dontTransform()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                )
+                .into(binding.toolimage)
+        }
+    }
 
     fun setHomeWishList(visiblity: String) {
         when (visiblity) {
@@ -550,7 +554,7 @@ class HomePage : NewBaseActivity() {
     fun consumeResponse(data: HashMap<String, View>) {
         //  Log.d(TAG, "onCreate: " + MagePrefs.getHomepageData())
         if (data.containsKey("top-bar_")) {
-            homepage.addView(data.get("top-bar_"))
+           // homepage.addView(data.get("top-bar_"))
         }
         if (data.containsKey("category-circle_")) {
             homepage.addView(data.get("category-circle_"))

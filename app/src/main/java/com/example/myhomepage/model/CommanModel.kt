@@ -8,10 +8,12 @@ import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.BitmapImageViewTarget
+import com.example.myhomepage.Activities.HomePage
 import com.example.myhomepage.R
 import io.reactivex.Observable
 import io.reactivex.Observer
@@ -100,27 +102,27 @@ class CommanModel : BaseObservable() {
 
 
     companion object {
-//        @BindingAdapter("imageUrl")
-//        @JvmStatic
-//        fun loadImage(view: ImageView, imageUrl: String?) {
-//            if (view.context is Splash || view.context is LoginActivity || view.context is RegistrationActivity) {
-//                Glide.with(context)
-//                    .asBitmap()
-//                    .load(imageUrl)
-//                    .priority(Priority.HIGH)
-//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                    .into(view)
-//            } else {
-//                Glide.with(context)
-//                    .asBitmap()
-//                    .load(imageUrl)
-//                    .placeholder(R.drawable.image_placeholder)
-//                    .error(R.drawable.image_placeholder)
-//                    .priority(Priority.HIGH)
-//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                    .into(view)
-//            }
-//        }
+        @BindingAdapter("imageUrl")
+        @JvmStatic
+        fun loadImage(view: ImageView, imageUrl: String?) {
+            if (view.context is HomePage ) {
+                Glide.with(view.context )
+                    .asBitmap()
+                    .load(imageUrl)
+                    .priority(Priority.HIGH)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(view)
+            } else {
+                Glide.with(view.context )
+                    .asBitmap()
+                    .load(imageUrl)
+                    .placeholder(R.drawable.image_placeholder)
+                    .error(R.drawable.image_placeholder)
+                    .priority(Priority.HIGH)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(view)
+            }
+        }
 
         @BindingAdapter("circleImageUrl")
         @JvmStatic
