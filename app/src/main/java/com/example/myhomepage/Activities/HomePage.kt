@@ -73,7 +73,7 @@ class HomePage : NewBaseActivity() {
         homeViewModel =
             ViewModelProvider(this).get(HomePageViewModel::class.java)
         getJsonDataFromAsset(applicationContext,"response.json")
-
+homeViewModel.getHomePageData() ?.observe(this@HomePage, Observer<java.util.HashMap<String, View>> { consumeResponse(it) })
 //        (application as MyApplication).mageNativeAppComponent!!.doHomePageInjection(this)
 //        MyApplication.dataBaseReference = MyApplication.getmFirebaseSecondanyInstance()
 //            .getReference(Urls(MyApplication.context).shopdomain.replace(".myshopify.com", ""))

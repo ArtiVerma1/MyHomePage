@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.example.myhomepage.Activities.HomePage
+import com.example.myhomepage.MagePrefs
 import com.example.myhomepage.R
 import com.example.myhomepage.adapter.HomePageBanner
 import com.example.myhomepage.databinding.*
@@ -70,8 +71,6 @@ companion object {
     var search_position: String? = null
     var search_placeholder: String? = null
 }
-    // ye function nahi use ho ra?
-
     fun getHomePageData(): MutableLiveData<HashMap<String, View>> {
         return homepagedata
     }
@@ -135,7 +134,7 @@ companion object {
 //                customLoader?.dismiss()
 //            }
         }
-        //  MagePrefs.setHomepageData(apiResponse)
+          MagePrefs.setHomepageData(apiResponse)
     }
     private fun createStandAloneBanner(jsonObject: JSONObject) {
         var binding: MStandlonebannerBinding = DataBindingUtil.inflate(
@@ -1418,9 +1417,9 @@ private fun createBannerSlider(jsonObject: JSONObject) {
 //                        binding
 //                    )
                  context.setHomeWishList(jsonObject.getString("wishlist"))
-                    if (jsonObject.has("logo_image_url")) {
-                        context.setHomeLogoImage(jsonObject.getString("logo_image_url"), binding)
-                    }
+//                    if (jsonObject.has("logo_image_url")) {
+//                        context.setHomeLogoImage(jsonObject.getString("logo_image_url"), binding)
+//                    }
 
                  context.setToggle(context.toolbar)
                  delay(1000)
@@ -1773,7 +1772,7 @@ private fun createBannerSlider(jsonObject: JSONObject) {
                  }
              }
          }
-         //homepagedata.value = hashMapOf("top-bar_" to binding.root)
+         homepagedata.value = hashMapOf("top-bar_" to binding.root)
      } catch (ex: Exception) {
          ex.printStackTrace()
      }
